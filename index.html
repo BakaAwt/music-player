@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="utf-8">
+<title>仿云音乐播放器</title>
+<link href="css/index.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="css/theme.css" rel="stylesheet" >
+<style type="text/css">
+body,td,th {
+	font-family: Helvetica, Arial, sans-serif;
+}
+body {
+	background-color: #BDDBF1;
+}
+</style>
+<script src="js/jquery-1.11.2.js"></script>
+<script src="js/index.js"></script>
+<script src="js/theme.js"></script>
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">黑胶唱片播放器</span>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">音乐设置</span>
+      <nav class="mdl-navigation">
+        <p>
+		  输入音乐名称：（可选）
+		  <input type="text" id="title"/><br>
+		  输入歌手名称：（可选）
+		  <input type="text" id="artist"/><br>
+		  输入封面地址：（可选）	
+		  <input type="text" id="coverURL"/><br>
+		  输入音乐地址：（必须）	
+		  <input type="text" id="musicURL"/><br> 
+		  <input type='button' value='保存设置' onclick="PlaySelected()"/>
+        </p>
+        <p>预置的音乐</p>
+        <p>
+        <input type='button' value='Alan Walker,Alex Skrindo - Sky' onclick="AwAsSky()"/>
+        </p>
+        <p>
+          <input type='button' value='μ s - START：DASH!!'s-START：DASH!!' onclick="MSSD()"/>
+        </p>
+        </p>
+      </nav>
+    </div>
+<audio id="myAudio" preload="auto"> </audio>
+<div id="cdPlayer">
+  <div id="myConsole"></div>
+  <div id="CD">
+		<div id="cdDisk"></div>
+	<div id="cdCover"></div>
+  </div>
+  <div id="cdControllerArm"></div>
+	
+  <div id="playMode">
+	<div id="shuffleMode" class="mode" title="随机播放"><i class="iconfontPlayMode">&#xe85e;</i>&nbsp;</div>
+		<div id="listMode" class="mode" title="顺序播放"><i class="iconfontPlayMode">&#xe7ec;</i>&nbsp;</div>
+		<div id="loopMode" class="mode" title="单曲循环"><i class="iconfontPlayMode">&#xe7df;</i>&nbsp;</div>
+
+		
+		
+  </div>
+	<div id="controllerButton" visibility="visible">
+	  <div id="playBtn" class="button" title="播放"><i class="iconfont">&#xe830;</i>&nbsp;</div>
+		<div id="pauseBtn" class="button" title="暂停"><i class="iconfont">&#xe81f;</i>&nbsp;</div>
+		<div id="preBtn" class="button" title="上一曲"><i class="iconfont">&#xe826;</i>&nbsp;</div>
+		<div id="nextBtn" class="button" title="下一曲"><i class="iconfont">&#xe811;</i>&nbsp;</div>
+		<div id="stopBtn" class="button" title="停止"><i class="iconfont">&#xe875;</i>&nbsp;</div>
+		<div id="muteBtn" class="button" title="静音"><i class="iconfont">&#xe8b1;</i>&nbsp;</div>
+		<!--				<div id="firstBtn" class="button" title="首曲"><i class="iconfont">&#xe787;</i>&nbsp;</div>
+		<div id="lastBtn" class="button" title="末曲"><i class="iconfont">&#xe7cc;</i>&nbsp;</div>-->
+  </div>
+</div>
+</body>
+</html>
