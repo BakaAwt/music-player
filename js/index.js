@@ -75,10 +75,10 @@ $().ready(function ()
 });
 function AwAsSky()
 {
-	title="Sky";
-	artist="Alan Walker,Alex Skrindo";
-	coverURL="http://p4.music.126.net/Vx4M2DcQkR2J_fywgkDj5Q==/18586144557880349.jpg";
-	musicURL="http://awtupdateserve.oss-cn-shanghai.aliyuncs.com/Alan%20Walker%2CAlex%20Skrindo%20-%20Sky.mp3";
+	//title="Sky";
+	//artist="Alan Walker,Alex Skrindo";
+	//coverURL="http://p4.music.126.net/Vx4M2DcQkR2J_fywgkDj5Q==/18586144557880349.jpg";
+	//musicURL="http://awtupdateserve.oss-cn-shanghai.aliyuncs.com/Alan%20Walker%2CAlex%20Skrindo%20-%20Sky.mp3";
 	songsList = 
 		[
 			{
@@ -88,18 +88,14 @@ function AwAsSky()
 				"musicURL" : "http://awtupdateserve.oss-cn-shanghai.aliyuncs.com/Alan%20Walker%2CAlex%20Skrindo%20-%20Sky.mp3"
 			}
 		];
-	cdCover.style.background = "url(\"" + coverURL + "\") no-repeat";
-	myAudio.src = decodeURI(musicURL);
-	changeSong("next");
-	myAudio.load();
-	myAudio.play();
+	play();
 }
 function MSSD()
 {
-	title="START：DASH!!";
-	artist="μ's";
-	coverURL="http://p4.music.126.net/F2rL7lYi3KcSpgym-O81pQ==/5888984278646723.jpg",
-	musicURL="http://awtupdateserve.oss-cn-shanghai.aliyuncs.com/%CE%BC%27s%20-%20START%EF%BC%9ADASH%21%21.mp3"
+	//title="START：DASH!!";
+	//artist="μ's";
+	//coverURL="http://p4.music.126.net/F2rL7lYi3KcSpgym-O81pQ==/5888984278646723.jpg",
+	//musicURL="http://awtupdateserve.oss-cn-shanghai.aliyuncs.com/%CE%BC%27s%20-%20START%EF%BC%9ADASH%21%21.mp3"
 	songsList = 
 		[
 			{
@@ -109,11 +105,7 @@ function MSSD()
 				"musicURL" : "http://awtupdateserve.oss-cn-shanghai.aliyuncs.com/%CE%BC%27s%20-%20START%EF%BC%9ADASH%21%21.mp3"
 			}
 		];
-	cdCover.style.background = "url(\"" + coverURL + "\") no-repeat";
-	myAudio.src = decodeURI(musicURL);
-	changeSong("next");
-	myAudio.load();
-	myAudio.play();
+	play();
 }
 function PlaySelected()
 {
@@ -138,14 +130,25 @@ function PlaySelected()
 				"musicURL" : musicURL
 			}
 		];
-	//alert("url(\"" + coverURL + "\") no-repeat");
-
+		play();
+}
+function play()
+{
+		//alert("url(\"" + coverURL + "\") no-repeat");
+	iIncrement = (iStartDeg - iEndDeg);
+	controllArm.style.transform="rotate(" + iStartDeg +"deg)";
+	if($cdCover.hasClass("cdPause"))
+	{
+		$cdCover.removeClass("cdPause");
+		$cdCover.removeClass("cdStart");
+	}
+	if(!$cdCover.hasClass("cdStart"))
+		$cdCover.addClass("cdStart");
 	myAudio.src = decodeURI(musicURL);
-	changeSong("next");
 	myAudio.load();
+	changeSong("next");
 	myAudio.play();
 }
-
 function initEventClick()
 {
 	/*^_^------------------some click events-------------------^_^*/
