@@ -75,10 +75,10 @@ $().ready(function ()
 });
 function AwAsSky()
 {
-	//title="Sky";
-	//artist="Alan Walker,Alex Skrindo";
-	//coverURL="http://p4.music.126.net/Vx4M2DcQkR2J_fywgkDj5Q==/18586144557880349.jpg";
-	//musicURL="http://awtupdateserve.oss-cn-shanghai.aliyuncs.com/Alan%20Walker%2CAlex%20Skrindo%20-%20Sky.mp3";
+	title="Sky";
+	artist="Alan Walker,Alex Skrindo";
+	coverURL="http://p4.music.126.net/Vx4M2DcQkR2J_fywgkDj5Q==/18586144557880349.jpg";
+	musicURL="http://awtupdateserve.oss-cn-shanghai.aliyuncs.com/Alan%20Walker%2CAlex%20Skrindo%20-%20Sky.mp3";
 	songsList = 
 		[
 			{
@@ -92,10 +92,10 @@ function AwAsSky()
 }
 function MSSD()
 {
-	//title="START：DASH!!";
-	//artist="μ's";
-	//coverURL="http://p4.music.126.net/F2rL7lYi3KcSpgym-O81pQ==/5888984278646723.jpg",
-	//musicURL="http://awtupdateserve.oss-cn-shanghai.aliyuncs.com/%CE%BC%27s%20-%20START%EF%BC%9ADASH%21%21.mp3"
+	title="START：DASH!!";
+	artist="μ's";
+	coverURL="http://p4.music.126.net/F2rL7lYi3KcSpgym-O81pQ==/5888984278646723.jpg",
+	musicURL="http://awtupdateserve.oss-cn-shanghai.aliyuncs.com/%CE%BC%27s%20-%20START%EF%BC%9ADASH%21%21.mp3"
 	songsList = 
 		[
 			{
@@ -134,6 +134,14 @@ function PlaySelected()
 }
 function play()
 {
+	if (coverURL === "") {
+		cdCover.style.background = "url(\"imgs/logo.png\") no-repeat";
+		coverURL = "url(\"imgs/logo.png\") no-repeat";
+	}
+	else {
+		cdCover.style.background = "url(\"" + coverURL + "\") no-repeat";
+		coverURL = "url(\"imgs/logo.png\") no-repeat";
+	}
 		//alert("url(\"" + coverURL + "\") no-repeat");
 	iIncrement = (iStartDeg - iEndDeg);
 	controllArm.style.transform="rotate(" + iStartDeg +"deg)";

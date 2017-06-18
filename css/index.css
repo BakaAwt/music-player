@@ -98,18 +98,18 @@ body
 }
 #cdCover
 {
-    width: 51%; /*宽*/
-    height: 51%; /*高*/
+    width: 51%;
+    height: 51%;
     /*border-radius: 100px;*/
-    background: url("../imgs/logo.png") no-repeat;
-    background-size: contain;
+    background: url(../imgs/logo.png) no-repeat;
+    background-size: cover;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -26%; /*位置*/
-    margin-left: -26%; /*位置*/
+    margin-top: -26%;
+    margin-left: -26%;
     z-index: 3;
-    transition:all 2s;
+    transition:all 0.5s;
 }
 .cdStart
 {
