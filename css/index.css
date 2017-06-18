@@ -1,70 +1,67 @@
-body
-{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #869A7C;
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #869A7C;
 }
 /*动画基础*/
 
-@keyframes myCDRotate
-{
-    from {transform:rotate(0);}
-    to {transform:rotate(360deg);}
+@keyframes myCDRotate {
+ from {
+transform:rotate(0);
 }
-
-@-moz-keyframes myCDRotate /* Firefox */
-{
-    from {transform:rotate(0);}
-    to {transform:rotate(360deg);}
+ to {
+transform:rotate(360deg);
 }
-
-@-webkit-keyframes myCDRotate /* Safari 和 Chrome */
-{
-    from {transform:rotate(0);}
-    to {transform:rotate(360deg);}
 }
-
-@-o-keyframes myCDRotate /* Opera */
-{
-    from {transform:rotate(0);}
-    to {transform:rotate(360deg);}
+ @-moz-keyframes myCDRotate /* Firefox */ {
+ from {
+transform:rotate(0);
 }
-
-@font-face
-{
-    font-family: 'iconfont';
-    src: url('../fonts/iconfont.eot'); /* IE9*/
-    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
-    url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-    url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+ to {
+transform:rotate(360deg);
 }
-
-.iconfont
-{
-    font-family:"iconfont" !important;
-    font-size:30px;
-    font-style:normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;
 }
-.iconfontPlayMode
-{
-    font-family:"iconfont" !important;
-    font-size:25px;
-    font-style:normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;
+ @-webkit-keyframes myCDRotate /* Safari 和 Chrome */ {
+ from {
+transform:rotate(0);
 }
-
-
-#cdPlayer
-{
+ to {
+transform:rotate(360deg);
+}
+}
+ @-o-keyframes myCDRotate /* Opera */ {
+ from {
+transform:rotate(0);
+}
+ to {
+transform:rotate(360deg);
+}
+}
+@font-face {
+	font-family: 'iconfont';
+	src: url('../fonts/iconfont.eot'); /* IE9*/
+	src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */  url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */  url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 30px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+.iconfontPlayMode {
+	font-family: "iconfont" !important;
+	font-size: 25px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+#cdPlayer {
 	width: 500px;
 	height: 500px;
 	position: inherit;
@@ -73,9 +70,7 @@ body
 	margin-top: -250px;
 	margin-left: -250px;
 }
-
-#CD
-{
+#CD {
 	width: 100%;
 	height: 100%;
 	/*background: url("../imgs/cdbk.png") no-repeat;*/
@@ -84,46 +79,45 @@ body
 	position: inherit;
 	left: -8px;
 }
-#cdDisk
-{
-    width: 75%;
-    height: 75%;
-    text-align: center;
-    background: url("../imgs/cddisk.png") no-repeat;
-    background-size: cover;
-    position: inherit;
-    top: 60px;
-    left: 60px;
-    z-index: 2000;
+#cdDisk {
+	width: 75%;
+	height: 75%;
+	text-align: center;
+	background: url("../imgs/cddisk.png") no-repeat;
+	background-size: cover;
+	position: inherit;
+	top: 60px;
+	left: 60px;
+	z-index: 2000;
 }
-#cdCover
-{
-    width: 51%;
-    height: 51%;
-    /*border-radius: 100px;*/
-    background: url(../imgs/logo.png) no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -26%;
-    margin-left: -26%;
-    z-index: 3;
-    transition:all 0.5s;
+#cdCover {
+	width: 51%;
+	height: 51%;
+	/*border-radius: 100px;*/
+	background-attachment:scroll;
+	background-repeat:no-repeat;
+	background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background: url(../imgs/logo.png);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -26%;
+	margin-left: -26%;
+	z-index: 3;
+	transition: all 0.5s;
 }
-.cdStart
-{
+.cdStart {
 	/*CD转速40秒一圈*/
-    animation:myCDRotate 40s infinite linear;
+	animation: myCDRotate 40s infinite linear;
 }
-.cdPause
-{
-    /*animation:myCDRotate 1s 2 alternate;*/
+.cdPause {
+	/*animation:myCDRotate 1s 2 alternate;*/
     /*animation:myCDRotate 2s infinite linear;*/
-    animation-play-state:paused;
+	animation-play-state: paused;
 }
-#cdControllerArm
-{
+#cdControllerArm {
 	width: 20%;
 	height: 176px;
 	/*border-radius: 100px;*/
@@ -139,9 +133,7 @@ body
 	transition: all 0.8s;
 	transform: rotate(-140deg);
 }
-
-#controllerButton
-{
+#controllerButton {
 	width: 37px;
 	height: 376px;
 	position: absolute;
@@ -150,27 +142,23 @@ body
 	margin-top: -250px;
 	z-index: 2002;
 }
-#controllerButton .button
-{
-    width: 100px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-    color: #b1b9c6;
-    font-size: 20px;
-    font-family: 'Arial';
-    /*background: url("../imgs/controllBtn.png") no-repeat;*/
-    background-size: contain;
-    margin:10px 0;
-    cursor: pointer;
+#controllerButton .button {
+	width: 100px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	color: #b1b9c6;
+	font-size: 20px;
+	font-family: 'Arial';
+	/*background: url("../imgs/controllBtn.png") no-repeat;*/
+	background-size: contain;
+	margin: 10px 0;
+	cursor: pointer;
 }
-#controllerButton .button:hover
-{
-    color: #ffffff;
+#controllerButton .button:hover {
+	color: #ffffff;
 }
-
-#playMode
-{
+#playMode {
 	width: 120px;
 	height: 30px;
 	text-align: center;
@@ -179,33 +167,29 @@ body
 	bottom: 53px;
 	z-index: 2002;
 }
-#playMode .mode
-{
-    width: 26px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    float: left;
-    color: #b1b9c6;
-    font-size: 16px;
-    margin: 0 2px;
-    padding-left: 4px;
-    cursor: pointer;
+#playMode .mode {
+	width: 26px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	float: left;
+	color: #b1b9c6;
+	font-size: 16px;
+	margin: 0 2px;
+	padding-left: 4px;
+	cursor: pointer;
 }
-#playMode .mode:hover
-{
-    color: #e74d3c;
+#playMode .mode:hover {
+	color: #e74d3c;
 }
-
-#myConsole
-{
-    width: 500px;
-    height: 30px;
-    font-family: 'Arial';
-    font-size: 20px;
-    color:  #ffffff;
-    position: absolute;
-    left: 30px;
-    bottom: 450px;
-    z-index: 2001;
+#myConsole {
+	width: 500px;
+	height: 30px;
+	font-family: 'Arial';
+	font-size: 20px;
+	color: #ffffff;
+	position: absolute;
+	left: 30px;
+	bottom: 450px;
+	z-index: 2001;
 }
